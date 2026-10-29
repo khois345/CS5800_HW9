@@ -12,31 +12,28 @@ public class TextCharacter {
 	}
 
 	public char getValue() {
-		// return value;
-		return 0;
+		return value;
 	}
 
 	public CharacterProperties getProperties() {
-		// return properties;
-		return null;
+		return properties;
 	}
 
 	public void setValue(char value) {
-		// this.value = value;
+		this.value = value;
 	}
 
 	public void setProperties(CharacterProperties properties) {
-		// if (properties == null) {
-		// 	System.err.println("Character properties cannot be empty");
-		// 	return;
-		// }
+		if (properties == null) {
+			System.err.println("Character properties cannot be empty");
+			return;
+		}
 
-		// this.properties = properties;
+		this.properties = properties;
 	}
 
 	@Override
 	public String toString() {
-		// return value + " (" + properties + ")";
-		return "";
+		return value + " (" + properties + ")";
 	}
 }
