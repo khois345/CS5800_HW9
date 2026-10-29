@@ -6,33 +6,26 @@ public final class CharacterProperties {
 	private final int size;
 
 	CharacterProperties(String font, String color, int size) {
-		// this.font = font;
-		// this.color = color;
-		// this.size = size;
-		this.font = null;
-		this.color = null;
-		this.size = 0;
+		this.font = font;
+		this.color = color;
+		this.size = size;
 	}
 
 	public String getFont() {
-		// return font;
-		return null;
+		return font;
 	}
 
 	public String getColor() {
-		// return color;
-		return null;
+		return color;
 	}
 
 	public int getSize() {
-		// return size;
-		return 0;
+		return size;
 	}
 
 	// other methods
 	@Override
 	public String toString() {
-		// return font + ", " + color + ", " + size;
-		return "";
+		return font + ", " + color + ", " + size;
 	}
 }
