@@ -23,51 +23,48 @@ public class SongServiceProxy implements SongService {
 	// other methods
 	@Override
 	public Song searchById(Integer songID) {
-		// Song song = songsById.get(songID);
-		// if (song == null) {
-		// 	song = server.searchById(songID);
-		// 	if (song != null) {
-		// 		songsById.put(songID, song);
-		// 	}
-		// }
+		Song song = songsById.get(songID);
+		if (song == null) {
+			song = server.searchById(songID);
+			if (song != null) {
+				songsById.put(songID, song);
+			}
+		}
 
-		// return song;
-		return null;
+		return song;
 	}
 
 	@Override
 	public List<Song> searchByTitle(String title) {
-		// if (title == null) {
-		// 	System.err.println("Title cannot be empty");
-		// 	return new ArrayList<>();
-		// }
+		if (title == null) {
+			System.err.println("Title cannot be empty");
+			return new ArrayList<>();
+		}
 
-		// String key = title.toLowerCase();
-		// List<Song> results = songsByTitle.get(key);
-		// if (results == null) {
-		// 	results = server.searchByTitle(title);
-		// 	songsByTitle.put(key, results);
-		// }
+		String key = title.toLowerCase();
+		List<Song> results = songsByTitle.get(key);
+		if (results == null) {
+			results = server.searchByTitle(title);
+			songsByTitle.put(key, results);
+		}
 
-		// return results;
-		return new ArrayList<>();
+		return results;
 	}
 
 	@Override
 	public List<Song> searchByAlbum(String album) {
-		// if (album == null) {
-		// 	System.err.println("Album cannot be empty");
-		// 	return new ArrayList<>();
-		// }
+		if (album == null) {
+			System.err.println("Album cannot be empty");
+			return new ArrayList<>();
+		}
 
-		// String key = album.toLowerCase();
-		// List<Song> results = songsByAlbum.get(key);
-		// if (results == null) {
-		// 	results = server.searchByAlbum(album);
-		// 	songsByAlbum.put(key, results);
-		// }
+		String key = album.toLowerCase();
+		List<Song> results = songsByAlbum.get(key);
+		if (results == null) {
+			results = server.searchByAlbum(album);
+			songsByAlbum.put(key, results);
+		}
 
-		// return results;
-		return new ArrayList<>();
+		return results;
 	}
 }
