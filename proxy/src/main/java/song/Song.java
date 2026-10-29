@@ -16,79 +16,73 @@ public class Song {
 	}
 
 	public int getId() {
-		// return id;
-		return 0;
+		return id;
 	}
 
 	public String getTitle() {
-		// return title;
-		return null;
+		return title;
 	}
 
 	public String getArtist() {
-		// return artist;
-		return null;
+		return artist;
 	}
 
 	public String getAlbum() {
-		// return album;
-		return null;
+		return album;
 	}
 
 	public int getDuration() {
-		// return duration;
-		return 0;
+		return duration;
 	}
 
 	public void setId(int id) {
-		// if (id <= 0) {
-		// 	System.err.println("Song id must be greater than 0");
-		// 	return;
-		// }
+		if (id <= 0) {
+			System.err.println("Song id must be greater than 0");
+			return;
+		}
 
-		// this.id = id;
+		this.id = id;
 	}
 
 	public void setTitle(String title) {
-		// if (title == null || title.isBlank()) {
-		// 	System.err.println("Song title cannot be blank");
-		// 	return;
-		// }
+		if (title == null || title.isBlank()) {
+			System.err.println("Song title cannot be blank");
+			return;
+		}
 
-		// this.title = title;
+		this.title = title;
 	}
 
 	public void setArtist(String artist) {
-		// if (artist == null || artist.isBlank()) {
-		// 	System.err.println("Song artist cannot be blank");
-		// 	return;
-		// }
+		if (artist == null || artist.isBlank()) {
+			System.err.println("Song artist cannot be blank");
+			return;
+		}
 
-		// this.artist = artist;
+		this.artist = artist;
 	}
 
 	public void setAlbum(String album) {
-		// if (album == null || album.isBlank()) {
-		// 	System.err.println("Song album cannot be blank");
-		// 	return;
-		// }
+		if (album == null || album.isBlank()) {
+			System.err.println("Song album cannot be blank");
+			return;
+		}
 
-		// this.album = album;
+		this.album = album;
 	}
 
 	public void setDuration(int duration) {
-		// if (duration <= 0) {
-		// 	System.err.println("Song duration must be greater than 0");
-		// 	return;
-		// }
+		if (duration <= 0) {
+			System.err.println("Song duration must be greater than 0");
+			return;
+		}
 
-		// this.duration = duration;
+		this.duration = duration;
 	}
 
 	// other methods
 	@Override
 	public String toString() {
-		// return id + ". " + title + " - " + artist + " (" + album + ", " + duration + "s)";
-		return "";
+		return id + ". " + title + " - " + artist + " (" + album + ", " + duration + "s)";
 	}
 }
