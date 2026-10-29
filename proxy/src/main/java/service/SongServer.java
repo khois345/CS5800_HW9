@@ -15,59 +15,56 @@ public class SongServer implements SongService {
 
 	// setters
 	public void addSong(Song song) {
-		// if (song == null) {
-		// 	System.err.println("Song cannot be empty");
-		// 	return;
-		// }
+		if (song == null) {
+			System.err.println("Song cannot be empty");
+			return;
+		}
 
-		// songs.put(song.getId(), song);
+		songs.put(song.getId(), song);
 	}
 
 	// other methods
 	@Override
 	public Song searchById(Integer songID) {
-		// try {
-		// 	Thread.sleep(1000);
-		// } catch (Exception e) {}
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {}
 
-		// return songs.get(songID);
-		return null;
+		return songs.get(songID);
 	}
 
 	@Override
 	public List<Song> searchByTitle(String title) {
-		// // java requires a try/catch block for Thread.sleep
-		// try {
-		// 	Thread.sleep(1000);	// add a second delay to simulate
-		// } catch (Exception e) {
-		// 	// do nothing
-		// }
+		// java requires a try/catch block for Thread.sleep
+		try {
+			Thread.sleep(1000);	// add a second delay to simulate
+		} catch (Exception e) {
+			// do nothing
+		}
 
-		// List<Song> results = new ArrayList<>();
-		// for (Song song : songs.values()) {
-		// 	if (song.getTitle().equalsIgnoreCase(title)) {
-		// 		results.add(song);
-		// 	}
-		// }
+		List<Song> results = new ArrayList<>();
+		for (Song song : songs.values()) {
+			if (song.getTitle().equalsIgnoreCase(title)) {
+				results.add(song);
+			}
+		}
 
-		// return results;
-		return new ArrayList<>();
+		return results;
 	}
 
 	@Override
 	public List<Song> searchByAlbum(String album) {
-		// try {
-		// 	Thread.sleep(1000);
-		// } catch (Exception e) {}
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {}
 
-		// List<Song> results = new ArrayList<>();
-		// for (Song song : songs.values()) {
-		// 	if (song.getAlbum().equalsIgnoreCase(album)) {
-		// 		results.add(song);
-		// 	}
-		// }
+		List<Song> results = new ArrayList<>();
+		for (Song song : songs.values()) {
+			if (song.getAlbum().equalsIgnoreCase(album)) {
+				results.add(song);
+			}
+		}
 
-		// return results;
-		return new ArrayList<>();
+		return results;
 	}
 }
