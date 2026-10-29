@@ -1,0 +1,10 @@
+package service;
+
+import java.util.List;
+import song.*;
+
+public interface SongService {
+	Song searchById(Integer songID);
+	List<Song> searchByTitle(String title);
+	List<Song> searchByAlbum(String album);
+}
