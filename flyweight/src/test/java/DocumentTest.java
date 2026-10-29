@@ -1,10 +1,13 @@
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.Path;
 
 import document.*;
 import properties.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -86,5 +89,28 @@ public class DocumentTest {
 		assertTrue(printed.contains("Document: Hi"));
 		assertTrue(printed.contains("H (Arial, Red, 12)"));
 		assertTrue(printed.contains("Shared character properties: 1"));
+	}
+
+	@Test
+	public void save(@TempDir Path folder) {
+		String file = folder.resolve("document.txt").toString();
+		Document document = new Document(new CharacterPropertiesFactory());
+		document.addText("Hi", "Arial", "Red", 12);
+		document.save(file);
+
+		assertTrue(new File(file).exists());
+	}
+
+	@Test
+	public void load(@TempDir Path folder) {
+		String file = folder.resolve("document.txt").toString();
+		Document saved = new Document(new CharacterPropertiesFactory());
+		saved.addText("Hi", "Arial", "Red", 12);
+		saved.save(file);
+
+		Document loaded = new Document(new CharacterPropertiesFactory());
+		loaded.load(file);
+
+		assertEquals("Hi", loaded.getText());
 	}
 }

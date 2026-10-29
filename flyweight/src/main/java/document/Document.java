@@ -81,33 +81,33 @@ public class Document {
 	}
 
 	public void save(String fileName) {
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
-			for (TextCharacter textCharacter : characters) {
-				CharacterProperties properties = textCharacter.getProperties();
-				writer.write(textCharacter.getValue() + "," + properties.getFont() + "," + properties.getColor() + "," + properties.getSize());
-				writer.newLine();
-			}
-		} catch (IOException e) {
-			System.err.println("Cannot save document to " + fileName);
-		}
+		// try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+		// 	for (TextCharacter textCharacter : characters) {
+		// 		CharacterProperties properties = textCharacter.getProperties();
+		// 		writer.write(textCharacter.getValue() + "," + properties.getFont() + "," + properties.getColor() + "," + properties.getSize());
+		// 		writer.newLine();
+		// 	}
+		// } catch (IOException e) {
+		// 	System.err.println("Cannot save document to " + fileName);
+		// }
 	}
 
 	public void load(String fileName) {
-		try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-			characters.clear();
+		// try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+		// 	characters.clear();
 
-			String line;
-			while ((line = reader.readLine()) != null) {
-				char value = line.charAt(0);
-				String[] properties = line.substring(2).split(",");
-				String font = properties[0];
-				String color = properties[1];
-				int size = Integer.parseInt(properties[2]);
+		// 	String line;
+		// 	while ((line = reader.readLine()) != null) {
+		// 		char value = line.charAt(0);
+		// 		String[] properties = line.substring(2).split(",");
+		// 		String font = properties[0];
+		// 		String color = properties[1];
+		// 		int size = Integer.parseInt(properties[2]);
 
-				addCharacter(value, font, color, size);
-			}
-		} catch (IOException e) {
-			System.err.println("Cannot load document from " + fileName);
-		}
+		// 		addCharacter(value, font, color, size);
+		// 	}
+		// } catch (IOException e) {
+		// 	System.err.println("Cannot load document from " + fileName);
+		// }
 	}
 }
