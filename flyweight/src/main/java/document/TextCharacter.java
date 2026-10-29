@@ -2,7 +2,6 @@ package document;
 
 import properties.*;
 
-// Java already has a Character class, use TextCharacter instead
 public class TextCharacter {
 	private char value;
 	private CharacterProperties properties;	// aggregation
@@ -13,29 +12,31 @@ public class TextCharacter {
 	}
 
 	public char getValue() {
-		return value;
+		// return value;
+		return 0;
 	}
 
 	public CharacterProperties getProperties() {
-		return properties;
+		// return properties;
+		return null;
 	}
 
 	public void setValue(char value) {
-		this.value = value;
+		// this.value = value;
 	}
 
 	public void setProperties(CharacterProperties properties) {
-		if (properties == null) {
-			System.err.println("Character properties cannot be empty");
-			return;
-		}
+		// if (properties == null) {
+		// 	System.err.println("Character properties cannot be empty");
+		// 	return;
+		// }
 
-		this.properties = properties;
+		// this.properties = properties;
 	}
 
-	// other methods
 	@Override
 	public String toString() {
-		return value + " (" + properties + ")";
+		// return value + " (" + properties + ")";
+		return "";
 	}
 }
