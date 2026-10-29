@@ -104,13 +104,13 @@ public class DocumentTest {
 	@Test
 	public void load(@TempDir Path folder) {
 		String file = folder.resolve("document.txt").toString();
-		Document saved = new Document(new CharacterPropertiesFactory());
-		saved.addText("Hi", "Arial", "Red", 12);
-		saved.save(file);
+		Document savedDocument = new Document(new CharacterPropertiesFactory());
+		savedDocument.addText("Hi", "Arial", "Red", 12);
+		savedDocument.save(file);
 
-		Document loaded = new Document(new CharacterPropertiesFactory());
-		loaded.load(file);
+		Document loadedDocument = new Document(new CharacterPropertiesFactory());
+		loadedDocument.load(file);
 
-		assertEquals("Hi", loaded.getText());
+		assertEquals("Hi", loadedDocument.getText());
 	}
 }
